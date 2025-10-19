@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="Secure online payment gateway for Vision Infoteck Limited – complete your app or web project payment safely with encrypted checkout.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Payment - Vision Infoteck Limited</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.webp">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/magnific.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .payment-container {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 50px auto;
+            animation: slideUp 0.6s ease-out;
+            overflow: hidden;
+        }
+
+        @keyframes slideUp {
+            from {opacity: 0; transform: translateY(30px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        .payment-header {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: #fff;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .payment-header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .payment-header p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .payment-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .order-summary {
+            background: #f8f9fa;
+            padding: 40px;
+        }
+
+        .payment-form {
+            padding: 40px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .summary-item:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 18px;
+            color: #007bff;
+            padding-top: 20px;
+            margin-top: 10px;
+            border-top: 2px solid #007bff;
+        }
+
+        .form-group {margin-bottom: 25px;}
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: 0.3s;
+            background: #fff;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 15px;
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .payment-method {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            background: #fff;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .payment-method:hover, .payment-method.active {
+            border-color: #007bff;
+            background: #f8f9ff;
+        }
+
+        .payment-method img {height: 30px; width: auto;}
+
+        .btn-pay {
+            width: 100%;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: #fff;
+            padding: 18px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-pay:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,123,255,0.3);
+        }
+
+        .security-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            color: #6c757d;
+            font-size: 14px;
+        }
+
+        .security-info i {margin-right: 8px; color: #28a745;}
+
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {color: #f8f9fa;}
+        .back-link i {margin-right: 8px;}
+
+        @media (max-width: 768px) {
+            .payment-container {margin: 20px; border-radius: 10px;}
+            .payment-body {grid-template-columns: 1fr;}
+            .order-summary {order: 2;}
+            .payment-form {order: 1;}
+            .form-row {grid-template-columns: 1fr;}
+            .payment-methods {grid-template-columns: repeat(2, 1fr);}
+        }
+
+        .success-animation {
+            display: none;
+            text-align: center;
+            padding: 60px 40px;
+        }
+
+        .success-animation.show {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {from {opacity: 0;} to {opacity: 1;}}
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #28a745;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 36px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="payment-container">
+        <a href="pricing.html" class="back-link">
+            <i class="fa fa-arrow-left"></i>
+            Back to Pricing
+        </a>
+
+        <div class="payment-header">
+            <h1>Secure Payment Checkout</h1>
+            <p>All transactions are safely encrypted with 256-bit SSL security</p>
+        </div>
+
+        <div class="payment-content">
+            <div class="payment-body">
+                <div class="order-summary">
+                    <h3 style="margin-bottom: 30px; font-size: 20px; color: #333;">Order Overview</h3>
+                    
+                    <div class="summary-item">
+                        <span>Chosen Package:</span>
+                        <span id="selected-package">Premium Package</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span>Base Price:</span>
+                        <span id="package-price">$899</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span>Tax (10%):</span>
+                        <span id="tax-amount">$89.90</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span>Total Payable:</span>
+                        <span id="total-amount">$988.90</span>
+                    </div>
+
+                    <div style="margin-top: 40px; padding: 20px; background: #fff; border-radius: 8px; border-left: 4px solid #007bff;">
+                        <h4 style="margin: 0 0 10px 0; color: #007bff; font-size: 16px;">Package Includes:</h4>
+                        <ul style="margin: 0; padding-left: 20px; color: #666;">
+                            <li>Complete app or web project setup</li>
+                            <li>24/7 customer assistance</li>
+                            <li>Up to 3 free revisions</li>
+                            <li>1-year technical maintenance</li>
+                            <li>Full source code delivery</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="payment-form">
+                    <form id="payment-form">
+                        <h3 style="margin-bottom: 30px; font-size: 20px; color: #333;">Payment Information</h3>
+                        
+                        <div class="payment-methods">
+                            <div class="payment-method active" data-method="card">
+                                <i class="fa fa-credit-card" style="font-size: 24px; color: #007bff;"></i>
+                            </div>
+                            <div class="payment-method" data-method="paypal">
+                                <i class="fa fa-paypal" style="font-size: 24px; color: #0070ba;"></i>
+                            </div>
+                            <div class="payment-method" data-method="apple">
+                                <i class="fa fa-apple" style="font-size: 24px; color: #000;"></i>
+                            </div>
+                            <div class="payment-method" data-method="google">
+                                <i class="fa fa-google" style="font-size: 24px; color: #4285f4;"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="card-number">Card Number</label>
+                            <input type="text" id="card-number" class="form-control" placeholder="1234 5678 9012 3456" maxlength="19">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="card-name">Cardholder Name</label>
+                            <input type="text" id="card-name" class="form-control" placeholder="John Doe">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiry">Expiry Date</label>
+                                <input type="text" id="expiry" class="form-control" placeholder="MM/YY" maxlength="5">
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" class="form-control" placeholder="123" maxlength="4">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="info@visioninfotech.com">
+                        </div>
+
+                        <button type="submit" class="btn-pay">
+                            <i class="fa fa-lock" style="margin-right: 10px;"></i>
+                            Confirm & Pay
+                        </button>
+
+                        <div class="security-info">
+                            <i class="fa fa-shield"></i>
+                            Your payment details are encrypted and protected
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="success-animation" id="success-screen">
+                <div class="success-icon">
+                    <i class="fa fa-check"></i>
+                </div>
+                <h2 style="color: #28a745; margin-bottom: 15px;">Payment Successful!</h2>
+                <p style="color: #6c757d; font-size: 16px; margin-bottom: 30px;">
+                    Thank you for choosing Vision Infoteck Limited. Your order has been received, and our team will start your project right away!
+                </p>
+                <p style="color: #6c757d; font-size: 14px;">
+                    A confirmation email has been sent to your registered address.
+                </p>
+                <div style="margin-top: 30px;">
+                    <a href="index.html" class="btn-pay" style="display: inline-block; text-decoration: none; width: auto; padding: 15px 30px;">
+                        Return to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const packageName = urlParams.get('package') || 'Premium Package';
+        const packagePrice = urlParams.get('price') || '899';
+
+        document.getElementById('selected-package').textContent = packageName;
+        document.getElementById('package-price').textContent = `$${packagePrice}`;
+
+        const price = parseFloat(packagePrice);
+        const tax = price * 0.1;
+        const total = price + tax;
+
+        document.getElementById('tax-amount').textContent = `$${tax.toFixed(2)}`;
+        document.getElementById('total-amount').textContent = `$${total.toFixed(2)}`;
+
+        document.querySelectorAll('.payment-method').forEach(method => {
+            method.addEventListener('click', function() {
+                document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        document.getElementById('card-number').addEventListener('input', e => {
+            let value = e.target.value.replace(/\s/g, '');
+            e.target.value = value.replace(/(\d{4})(?=\d)/g, '$1 ');
+        });
+
+        document.getElementById('expiry').addEventListener('input', e => {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 2) value = value.slice(0, 2) + '/' + value.slice(2, 4);
+            e.target.value = value;
+        });
+
+        document.getElementById('cvv').addEventListener('input', e => {
+            e.target.value = e.target.value.replace(/\D/g, '');
+        });
+
+        document.getElementById('payment-form').addEventListener('submit', e => {
+            e.preventDefault();
+
+            const cardNumber = document.getElementById('card-number').value.replace(/\s/g, '');
+            const cardName = document.getElementById('card-name').value.trim();
+            const expiry = document.getElementById('expiry').value;
+            const cvv = document.getElementById('cvv').value;
+            const email = document.getElementById('email').value;
+
+            if (cardNumber.length < 13) return alert('Enter a valid card number.');
+            if (!cardName) return alert('Enter the cardholder name.');
+            if (expiry.length !== 5) return alert('Enter a valid expiry date.');
+            if (cvv.length < 3) return alert('Enter a valid CVV.');
+            if (!email.includes('@')) return alert('Enter a valid email address.');
+
+            const btn = document.querySelector('.btn-pay');
+            btn.innerHTML = '<i class="fa fa-spinner fa-spin" style="margin-right: 10px;"></i>Processing...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                document.querySelector('.payment-body').style.display = 'none';
+                document.getElementById('success-screen').classList.add('show');
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

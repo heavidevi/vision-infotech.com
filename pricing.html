@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Pricing - Pandaje Web Services</title>
+    <meta name="description" content="Access of knowledge and insights through Pandaje Web Services' Knowledge Bank and Blogs based in Noida to gain more knowledge about the services we offer.">
+    <meta name="keywords" content="Business Growth Blogs, Business Blogs Services">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.webp">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.transitions.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/meanmenu.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/venobox.css">
+    <link rel="stylesheet" href="css/magnific.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Additional CSS for Pricing -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    
+    <!-- Modernizr -->
+    <script src="js/modernizr-2.8.3.min.js"></script>
+    
+    <!-- Lottie Player -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="x80U8fL08UedOTA5_GKNcdYj2GxuX0Qa6h_tYzYuYmU">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRKQ60P9MQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-SRKQ60P9MQ');
+    </script>
+    
+    <!-- Google Ads -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11168007750"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-11168007750');
+    </script>
+    
+    <!-- Modern Pricing Card Styles -->
+    <style>
+        /* Simple Pricing Card Design */
+        .pricing-container {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .pricing-card {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #e9ecef;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border-color: #007bff;
+        }
+
+        .pricing-card.featured {
+            border: 2px solid #007bff;
+            position: relative;
+        }
+
+        .pricing-card.featured::before {
+            content: "Popular";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #007bff;
+            color: white;
+            padding: 5px 10px;
+            font-size: 11px;
+            font-weight: 600;
+            border-radius: 4px;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .card-header {
+            background: #ffffff;
+            color: #333;
+            padding: 30px 20px 10px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            position: relative;
+            border-bottom: 2px solid #f8f9fa;
+        }
+
+        .card-header h4 {
+            margin: 0 0 10px 0;
+            font-size: 22px;
+            font-weight: 700;
+            color: #007bff;
+        }
+
+        .animation-container {
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            margin: 20px 0;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .service-animation {
+            width: 120px;
+            height: 120px;
+        }
+
+        .pricing-section-headline {
+            margin-bottom: 60px;
+        }
+
+        .pricing-section-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .pricing-section-description {
+            font-size: 18px;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .card-body {
+            padding: 30px 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-display {
+            text-align: center;
+            margin: 25px 0 30px 0;
+            padding: 20px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .price-display .currency {
+            font-size: 24px;
+            color: #007bff;
+            font-weight: 600;
+            vertical-align: top;
+        }
+
+        .price-display .amount {
+            font-size: 48px;
+            color: #333;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .price-display .period {
+            font-size: 16px;
+            color: #6c757d;
+            margin-left: 5px;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 25px 0;
+            flex: 1;
+        }
+
+        .features-list li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .features-list li i {
+            color: #28a745;
+            margin-right: 10px;
+            font-size: 14px;
+            width: 16px;
+        }
+
+        .features-list li span {
+            color: #495057;
+            font-weight: 400;
+        }
+
+        .purchase-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            width: 100%;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin-top: auto;
+        }
+
+        .purchase-btn:hover {
+            background: #0056b3;
+            transform: translateY(-1px);
+        }
+
+        /* Fake Payment Modal */
+
+
+        .payment-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .payment-header {
+            background: linear-gradient(135deg, #3078fb 0%, #1e3c72 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 20px 20px 0 0;
+            text-align: center;
+        }
+
+        .payment-header h3 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .payment-body {
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e8f4f8;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #3078fb;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .payment-summary {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+
+        .summary-row.total {
+            font-weight: bold;
+            font-size: 18px;
+            border-top: 2px solid #3078fb;
+            padding-top: 10px;
+            color: #3078fb;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn-cancel {
+            background: #95a5a6;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            flex: 1;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cancel:hover {
+            background: #7f8c8d;
+        }
+
+        .btn-pay {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            flex: 2;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-pay:hover {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            transform: translateY(-2px);
+        }
+
+        /* Success Animation */
+        .success-animation {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .checkmark {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: block;
+            stroke-width: 3;
+            stroke: #27ae60;
+            stroke-miterlimit: 10;
+            margin: 0 auto 20px;
+            box-shadow: inset 0px 0px 0px #27ae60;
+            animation: fill 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
+        }
+
+        .checkmark__circle {
+            stroke-dasharray: 166;
+            stroke-dashoffset: 166;
+            stroke-width: 3;
+            stroke-miterlimit: 10;
+            stroke: #27ae60;
+            fill: none;
+            animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+        }
+
+        .checkmark__check {
+            transform-origin: 50% 50%;
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+        }
+
+        @keyframes stroke {
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes scale {
+            0%, 100% {
+                transform: none;
+            }
+            50% {
+                transform: scale3d(1.1, 1.1, 1);
+            }
+        }
+
+        @keyframes fill {
+            100% {
+                box-shadow: inset 0px 0px 0px 30px #27ae60;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .price-display .amount {
+                font-size: 36px;
+            }
+            
+            .payment-content {
+                margin: 10% auto;
+                width: 95%;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .pricing-container {
+                padding: 40px 0;
+            }
+        }
+
+        /* Fix footer overlap issue - Enhanced spacing */
+        .blog-area.fix.area-padding-2 {
+            padding-bottom: 120px !important;
+            margin-bottom: 60px !important;
+        }
+
+        /* Ensure footer doesn't overlap */
+        #footer-placeholder {
+            margin-top: 80px !important;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+    
+    <!-- Navigation Placeholder -->
+    <div id="navigation-placeholder"></div>
+
+    <!-- Page Header -->
+    <div class="page-area">
+        <div class="breadcumb-overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="breadcrumb text-center">
+                        <div class="section-headline white-headline text-center">
+                            <h3>Pricing</h3>
+                        </div>
+                        <ul>
+                            <li class="home-bread">Home</li>
+                            <li>Pricing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modern Pricing Area -->
+    <div class="pricing-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-headline text-center pricing-section-headline">
+                        <h2 class="pricing-section-title">Choose Your Perfect Plan</h2>
+                        <p class="pricing-section-description">Select from our comprehensive range of digital services designed to accelerate your business growth</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pricing-grid">
+                <!-- SEO Package -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <h4>SEO Optimization</h4>
+                        <div class="animation-container">
+                            <lottie-player 
+                                src="https://assets1.lottiefiles.com/packages/lf20_aewe22ol.json" 
+                                background="transparent" 
+                                speed="1" 
+                                class="service-animation"
+                                loop 
+                                autoplay>
+                            </lottie-player>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="price-display">
+                            <span class="currency">$</span>
+                            <span class="amount">199</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <ul class="features-list">
+                            <li><i class="fa fa-check"></i><span>Advanced Keyword Research</span></li>
+                            <li><i class="fa fa-check"></i><span>On-Page SEO Optimization</span></li>
+                            <li><i class="fa fa-check"></i><span>Off-Page Link Building</span></li>
+                            <li><i class="fa fa-check"></i><span>Technical SEO Audit</span></li>
+                            <li><i class="fa fa-check"></i><span>Monthly Progress Reports</span></li>
+                            <li><i class="fa fa-check"></i><span>24/7 Support</span></li>
+                        </ul>
+                        <button class="purchase-btn" onclick="redirectToPayment('SEO Optimization', 199)">
+                            Get Started Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Web Development Package -->
+                <div class="pricing-card featured">
+                    <div class="card-header">
+                        <h4>Web Development</h4>
+                        <div class="animation-container">
+                            <lottie-player 
+                                src="https://assets5.lottiefiles.com/packages/lf20_urcp3va3.json" 
+                                background="transparent" 
+                                speed="1" 
+                                class="service-animation"
+                                loop 
+                                autoplay>
+                            </lottie-player>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="price-display">
+                            <span class="currency">$</span>
+                            <span class="amount">299</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <ul class="features-list">
+                            <li><i class="fa fa-check"></i><span>Custom Website Design</span></li>
+                            <li><i class="fa fa-check"></i><span>Responsive Development</span></li>
+                            <li><i class="fa fa-check"></i><span>CMS Integration</span></li>
+                            <li><i class="fa fa-check"></i><span>E-commerce Solutions</span></li>
+                            <li><i class="fa fa-check"></i><span>Performance Optimization</span></li>
+                            <li><i class="fa fa-check"></i><span>Free SSL Certificate</span></li>
+                        </ul>
+                        <button class="purchase-btn" onclick="redirectToPayment('Web Development', 299)">
+                            Get Started Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Digital Marketing Package -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <h4>Digital Marketing</h4>
+                        <div class="animation-container">
+                            <lottie-player 
+                                src="https://assets8.lottiefiles.com/packages/lf20_rVEgYArLER.json" 
+                                background="transparent" 
+                                speed="1" 
+                                class="service-animation"
+                                loop 
+                                autoplay>
+                            </lottie-player>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="price-display">
+                            <span class="currency">$</span>
+                            <span class="amount">249</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <ul class="features-list">
+                            <li><i class="fa fa-check"></i><span>Social Media Marketing</span></li>
+                            <li><i class="fa fa-check"></i><span>PPC Campaign Management</span></li>
+                            <li><i class="fa fa-check"></i><span>Content Marketing Strategy</span></li>
+                            <li><i class="fa fa-check"></i><span>Email Marketing</span></li>
+                            <li><i class="fa fa-check"></i><span>Analytics & Reporting</span></li>
+                            <li><i class="fa fa-check"></i><span>Brand Management</span></li>
+                        </ul>
+                        <button class="purchase-btn" onclick="redirectToPayment('Digital Marketing', 249)">
+                            Get Started Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- App Development Package -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <h4>App Development</h4>
+                        <div class="animation-container">
+                            <lottie-player 
+                                src="https://assets1.lottiefiles.com/packages/lf20_aewe22ol.json" 
+                                background="transparent" 
+                                speed="1" 
+                                class="service-animation"
+                                loop 
+                                autoplay>
+                            </lottie-player>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="price-display">
+                            <span class="currency">$</span>
+                            <span class="amount">399</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <ul class="features-list">
+                            <li><i class="fa fa-check"></i><span>iOS & Android Apps</span></li>
+                            <li><i class="fa fa-check"></i><span>Cross-Platform Development</span></li>
+                            <li><i class="fa fa-check"></i><span>UI/UX Design</span></li>
+                            <li><i class="fa fa-check"></i><span>App Store Optimization</span></li>
+                            <li><i class="fa fa-check"></i><span>Backend Integration</span></li>
+                            <li><i class="fa fa-check"></i><span>Maintenance Support</span></li>
+                        </ul>
+                        <button class="purchase-btn" onclick="redirectToPayment('App Development', 399)">
+                            Get Started Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Graphic Design Package -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <h4>Graphic Design</h4>
+                        <div class="animation-container">
+                            <lottie-player 
+                                src="https://assets5.lottiefiles.com/packages/lf20_urcp3va3.json" 
+                                background="transparent" 
+                                speed="1" 
+                                class="service-animation"
+                                loop 
+                                autoplay>
+                            </lottie-player>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="price-display">
+                            <span class="currency">$</span>
+                            <span class="amount">149</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <ul class="features-list">
+                            <li><i class="fa fa-check"></i><span>Professional Logo Design</span></li>
+                            <li><i class="fa fa-check"></i><span>Brand Identity Package</span></li>
+                            <li><i class="fa fa-check"></i><span>Print Design Materials</span></li>
+                            <li><i class="fa fa-check"></i><span>Digital Graphics</span></li>
+                            <li><i class="fa fa-check"></i><span>Marketing Collaterals</span></li>
+                            <li><i class="fa fa-check"></i><span>Unlimited Revisions</span></li>
+                        </ul>
+                        <button class="purchase-btn" onclick="redirectToPayment('Graphic Design', 149)">
+                            Get Started Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- US Dental Billing Package -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <h4>US Dental Billing</h4>
+                        <div class="animation-container">
+                            <lottie-player 
+                                src="https://assets8.lottiefiles.com/packages/lf20_rVEgYArLER.json" 
+                                background="transparent" 
+                                speed="1" 
+                                class="service-animation"
+                                loop 
+                                autoplay>
+                            </lottie-player>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="price-display">
+                            <span class="currency">$</span>
+                            <span class="amount">349</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <ul class="features-list">
+                            <li><i class="fa fa-check"></i><span>Insurance Claims Processing</span></li>
+                            <li><i class="fa fa-check"></i><span>Revenue Cycle Management</span></li>
+                            <li><i class="fa fa-check"></i><span>Compliance Management</span></li>
+                            <li><i class="fa fa-check"></i><span>Denial Management</span></li>
+                            <li><i class="fa fa-check"></i><span>Detailed Billing Analytics</span></li>
+                            <li><i class="fa fa-check"></i><span>HIPAA Compliant</span></li>
+                        </ul>
+                        <button class="purchase-btn" onclick="redirectToPayment('US Dental Billing', 349)">
+                            Get Started Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fake Payment Modal -->
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts Placeholder -->
+    <div id="scripts-placeholder"></div>
+    
+    <!-- Dynamic Includes Script -->
+    <script src="js/dynamic-includes.js"></script>
+
+    <!-- Payment Redirection JavaScript -->
+    <script>
+        function redirectToPayment(serviceName, price) {
+            // Redirect to payment page with package information
+            window.location.href = `payment.html?package=${encodeURIComponent(serviceName)}&price=${price}`;
+        }
+
+        // Add smooth scroll and card animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.pricing-card');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
