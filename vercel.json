@@ -1,0 +1,132 @@
+{
+  "rewrites": [
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/pricing",
+      "destination": "/pricing.html"
+    },
+    {
+      "source": "/app-development",
+      "destination": "/app-development.html"
+    },
+    {
+      "source": "/graphic-design",
+      "destination": "/graphic-design.html"
+    },
+    {
+      "source": "/digital-marketing",
+      "destination": "/digital-marketing.html"
+    },
+    {
+      "source": "/web-solutions",
+      "destination": "/web-solutions.html"
+    },
+    {
+      "source": "/web-ux-design",
+      "destination": "/web-ux-design.html"
+    },
+    {
+      "source": "/us-dental-billing",
+      "destination": "/us-dental-billing.html"
+    },
+    {
+      "source": "/payment-gateways",
+      "destination": "/payment-gateways.html"
+    },
+    {
+      "source": "/payment",
+      "destination": "/payment.html"
+    },
+    {
+      "source": "/privacypolicy",
+      "destination": "/privacypolicy.html"
+    },
+    {
+      "source": "/refundpolicy",
+      "destination": "/refundpolicy.html"
+    },
+    {
+      "source": "/termscondition",
+      "destination": "/termscondition.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/about.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/pricing.html",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/app-development.html",
+      "destination": "/app-development",
+      "permanent": true
+    },
+    {
+      "source": "/graphic-design.html",
+      "destination": "/graphic-design",
+      "permanent": true
+    },
+    {
+      "source": "/digital-marketing.html",
+      "destination": "/digital-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/web-solutions.html",
+      "destination": "/web-solutions",
+      "permanent": true
+    },
+    {
+      "source": "/web-ux-design.html",
+      "destination": "/web-ux-design",
+      "permanent": true
+    },
+    {
+      "source": "/us-dental-billing.html",
+      "destination": "/us-dental-billing",
+      "permanent": true
+    },
+    {
+      "source": "/payment-gateways.html",
+      "destination": "/payment-gateways",
+      "permanent": true
+    },
+    {
+      "source": "/payment.html",
+      "destination": "/payment",
+      "permanent": true
+    },
+    {
+      "source": "/privacypolicy.html",
+      "destination": "/privacypolicy",
+      "permanent": true
+    },
+    {
+      "source": "/refundpolicy.html",
+      "destination": "/refundpolicy",
+      "permanent": true
+    },
+    {
+      "source": "/termscondition.html",
+      "destination": "/termscondition",
+      "permanent": true
+    }
+  ]
+}
